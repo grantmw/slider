@@ -2,7 +2,7 @@ html {
 	background: #F0F0F0;
 }
 
-/* position range input and buttons */
+/* range input and buttons (position) */
 
 .slidercontainer {
 	border: 2px solid red;
@@ -13,7 +13,7 @@ html {
 
 
 .inputcontainer {
-	width: 250px;
+	width: 276px; /* container width and handle width need to add to input width*/
 	margin: 0 auto;
 	position: relative;
 	border: 2px solid red;
@@ -32,11 +32,11 @@ html {
 }
 
 .add {
-	margin-left: 50px;
+	margin-left: 28px;
 	margin-top: -4px;
 }
 
-/* styling range input */
+/* range input (styling)*/
 
 
 input[type=range] {
@@ -63,4 +63,46 @@ input[type='range']::-webkit-slider-thumb {
 input:focus {
 	outline: none;
 }
+
+/* range input value display (positioning) */
+
+.slidevalue {
+	top: 0px;
+	position: absolute;
+	font-family: courier;
+	font-size: 10px;
+	left: 50%;
+	pointer-events: none;
+	text-align: center;
+	width: 25px;
+	border: 2px solid transparent; 
+}
+
+g
+
+.pop {
+	background-color: blue;
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	top: -49px;
+	text-align: center;
+	font-size: 16px;
+	left: -3px;
+}
+
+
+.pop:after {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  bottom: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid purple;
+  display: block;
+  left: 5px;
+}
+
 
