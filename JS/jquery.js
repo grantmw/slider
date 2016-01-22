@@ -5,7 +5,6 @@ $(document).ready(function(){
     $('.handle').html(input_value)
     $('.slidevalue').css('left', input_value + '%')
     $('.pop').html(input_value)
-
   };
 
 
@@ -19,13 +18,14 @@ $(document).ready(function(){
     $('.pop').css('display','none')
   });
 
+
+
   $('.slidercontainer')
   .on('mousedown', '.subtract', function(){
-    $("#slider").val($("#slider").val()-5)
+    $("#slider").val(parseInt($("#slider").val())-5)
     update()
   })
   .on('mousedown', '.add', function(){
-    console.log('hi')
     $("#slider").val(parseInt($("#slider").val())+5)
     update()
   })
