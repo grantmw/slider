@@ -7,43 +7,42 @@ $(document).ready(function(){
     $('.pop').html(input_value)
   };
 
-
-  $('.inputcontainer')
-  .on('mousedown','input', function(){
-    $('.handle').css('display','none')
-    $('.pop').css('display','block')
+  $('input').bind("mousedown mouseup", function(){
+    $('.handle').toggle()
+    $('.pop').toggle()
   })
-  .on('mouseup','input', function(){
-    $('.handle').css('display','block')
-    $('.pop').css('display','none')
-  });
 
   var moving
 
+  var move = function(direction){
+    if (direction === "add"){
+      $("#slider").val(parseInt($("#slider").val())+5)
+    }
+    else{
+      $("#slider").val(parseInt($("#slider").val())-5)
+    }
+    update();
+  };
 
   $('.slidercontainer')
   .on('mousedown', '.subtract', function(){
     moving = setInterval(function(){
-      $("#slider").val(parseInt($("#slider").val())-5)
-      update();
+      move("subtract")
     },200);
   })
   .on('mousedown', '.add', function(){
     moving = setInterval(function(){
-      $("#slider").val(parseInt($("#slider").val())+5)
-      update();
+      move("add")
     },200);
   })
   .on('mouseup', '.button', function(){
     clearInterval(moving);
   }) 
   .on('click', '.subtract', function(){
-    $("#slider").val(parseInt($("#slider").val())-5)
-    update();
+    move("subtract")
   }) 
   .on('click', '.add', function(){
-    $("#slider").val(parseInt($("#slider").val())+5)
-    update();
+    move("add")
   });
 
 });
