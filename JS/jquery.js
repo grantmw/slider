@@ -5,9 +5,10 @@ $(document).ready(function(){
     $('.handle').html(input_value)
     $('.slidevalue').css('left', input_value + '%')
     $('.pop').html(input_value)
+    $('.implement').html("Your Selected Value: " + input_value)
   };
 
-  $('input').bind("mousedown mouseup", function(){
+  $('.inputcontainer input').bind("mousedown mouseup", function(){
     $('.handle').toggle()
     $('.pop').toggle()
   })
@@ -44,6 +45,10 @@ $(document).ready(function(){
   .on('click', '.add', function(){
     move("add")
   });
+
+  $(".submit-button input").click(function(){
+    $('.implement').fadeIn(300).fadeOut(700)
+  })
 
 });
 
