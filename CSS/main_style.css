@@ -1,6 +1,10 @@
 html {
 	background: #F0F0F0;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;    
 }
+
 
 /* range input and buttons (position) */
 
@@ -28,6 +32,10 @@ html {
 	background-color: #bf4e7c;
 	color: #fff;
 	cursor: pointer;
+}
+
+.button:active{
+	background-color: #2bc1dc;
 }
 
 .add {
@@ -102,5 +110,34 @@ input:focus {
 	border-top: 10px solid #f68d24;
 	display: block;
 	left: 15px;
+}
+
+/* Submit Button position & styling */
+
+.submit-button {
+	margin-top: 20px;
+}
+
+input[type=submit] {
+    -webkit-appearance: none;
+    border-radius: 5px;
+    border: 0px;
+    background-color: #f68d24;
+	font-family: helvetica;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+input[type=submit]:active {
+	background-color: #ffcc00;
+}
+
+/* Submitted Value */
+
+.implement {
+	text-align: center;
+	font-size: 600%;
+	font-family: Monaco;
+	display: none;
 }
 
