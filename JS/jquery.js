@@ -18,17 +18,33 @@ $(document).ready(function(){
     $('.pop').css('display','none')
   });
 
+  var moving
 
 
   $('.slidercontainer')
   .on('mousedown', '.subtract', function(){
-    $("#slider").val(parseInt($("#slider").val())-5)
-    update()
+    moving = setInterval(function(){
+      $("#slider").val(parseInt($("#slider").val())-5)
+      update();
+    },200);
   })
   .on('mousedown', '.add', function(){
-    $("#slider").val(parseInt($("#slider").val())+5)
-    update()
+    moving = setInterval(function(){
+      $("#slider").val(parseInt($("#slider").val())+5)
+      update();
+    },200);
   })
-
+  .on('mouseup', '.button', function(){
+    clearInterval(moving);
+  }) 
+  .on('click', '.subtract', function(){
+    $("#slider").val(parseInt($("#slider").val())-5)
+    update();
+  }) 
+  .on('click', '.add', function(){
+    $("#slider").val(parseInt($("#slider").val())+5)
+    update();
+  });
 
 });
+
